@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مزعج - تسجيل الدخول</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="matrix-bg">
+    <canvas id="matrix"></canvas>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1 class="glitch" data-text="مزعج">مزعج</h1>
+            <p class="subtitle">منصة استضافة بوتات التليجرام</p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('login')">تسجيل الدخول</button>
+                <button class="tab-btn" onclick="showTab('register')">إنشاء حساب</button>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="input-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" id="loginEmail" required placeholder="email@example.com">
+                </div>
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="loginPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn-primary">دخول</button>
+                <p id="loginError" class="error-msg"></p>
+            </form>
+            <form id="registerForm" class="auth-form hidden">
+                <div class="input-group">
+                    <label>الاسم</label>
+                    <input type="text" id="regName" required placeholder="اسم المستخدم">
+                </div>
+                <div class="input-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" id="regEmail" required placeholder="email@example.com">
+                </div>
+                <div class="input-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="regPassword" required placeholder="••••••••" minlength="6">
+                </div>
+                <button type="submit" class="btn-primary">إنشاء حساب</button>
+                <p id="regError" class="error-msg"></p>
+            </form>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/matrix.js"></script>
+</body>
+</html>
